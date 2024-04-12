@@ -8,25 +8,25 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="includes/add-theme.inc.php" method="post">
         <label for="name">Name of your theme :</label>
-        <input type="text" name="name" id="" required>
+        <input type="text" name="name" required>
         <br>
         <br>
 
         <label for="bg-color">Color of Page Background :</label>
-        <input type="color" name="bg-color" id="" required>
+        <input type="color" name="bg-color" required>
         <br>
         <br>
 
         <label for="heading-color">Color of Heading 1 :</label>
-        <input type="color" name="h1-color" id="" required>
+        <input type="color" name="h1-color" required>
         <br>
         <br>
 
-        <label for="allignment">Allignment of Heading 1 :</label>
-        <select name="allignment" id="" required>
-            <option value="default" disabled selected>-- Choose the Allignment</option>
+        <label for="h1-align">Alignment of Heading 1 :</label>
+        <select name="h1-align" required>
+            <option value="" disabled selected>-- Choose the Alignment --</option>
             <option value="left">Left</option>
             <option value="center">Center</option>
             <option value="right">Right</option>
@@ -35,15 +35,16 @@
         <br>
 
         <label for="par-color">Color of Paragraph :</label>
-        <input type="color" name="par-color" id="" required>
+        <input type="color" name="par-color" required>
         <br>
         <br>
 
         <label for="par-size">Font Size of Paragraph :</label>
-        <input type="number" name="par-size" id="" required>
+        <input type="number" name="par-size" min="10" max="24" required>
+        <label for="par-size">px</label>
         <br>
         <br>
-        <input type="submit" value="Save">
+        <button type="submit">Save</button>
     </form>
 </body>
 
