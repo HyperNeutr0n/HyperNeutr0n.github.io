@@ -1,3 +1,23 @@
+<?php
+// Load semua theme dari cookie
+$savedTheme = array();
+if (isset($_COOKIE['themes'])) {
+    $savedTheme = $_COOKIE['themes'];
+}
+
+// Apply style 
+$active_theme_name = "";
+if (isset($_POST['selected-theme'])) {
+    $active_theme_name = $_POST['selected-theme'];
+    setcookie("active_theme", $active_theme_name . "~" . $savedTheme["$active_theme_name"], 0, "/");
+    $themeData = explode("~", $savedTheme[$active_theme_name]);
+    $bg_color = $themeData[0];
+    $h1_color = $themeData[1];
+    $h1_align = $themeData[2];
+    $par_color = $themeData[3];
+    $par_size = $themeData[4];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,33 +25,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Tengah Semester</title>
-
     <?php
-    // Load semua theme dari cookie
-    $savedTheme = array();
-    if (isset($_COOKIE['themes'])) {
-        $savedTheme = $_COOKIE['themes'];
-    }
-
-    // Apply style 
-    $active_theme_name = "";
-    if (isset($_POST['selected-theme'])) {
-        $active_theme_name = $_POST['selected-theme'];
-        setcookie("active_theme", $active_theme_name . "~" . $savedTheme["$active_theme_name"], 0, "/");
-        $themeData = explode("~", $savedTheme[$active_theme_name]);
-        $bg_color = $themeData[0];
-        $h1_color = $themeData[1];
-        $h1_align = $themeData[2];
-        $par_color = $themeData[3];
-        $par_size = $themeData[4];
-
-        echo "<style>";
-        echo "body { background-color: $bg_color;}";
-        echo "h1 { color: $h1_color; text-align: $h1_align; }";
-        echo "p { color: $par_color; font-size: $par_size" . "px; }";
-        echo "</style>";
-    }
+    echo "<style>";
+    echo "body { background-color: $bg_color;}";
+    echo "h1 { color: $h1_color; text-align: $h1_align; }";
+    echo "p { color: $par_color; font-size: $par_size" . "px; }";
+    echo "</style>";
     ?>
+
 </head>
 
 <body>
