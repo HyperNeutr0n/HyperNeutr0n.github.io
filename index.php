@@ -35,6 +35,12 @@
 </head>
 
 <body>
+    <h2>Anggota Kelompok</h2>
+    <ul>
+        <li>160422017 - Randy Lemuel</li>
+        <li>160422019 - Nico Isao Jowi</li>
+        <li>160422020 - Darren Gideon Sutanto</li>
+    </ul>
     <form action="" method="post">
         <label for="theme">Theme : </label>
         <select name="selected-theme" required>
