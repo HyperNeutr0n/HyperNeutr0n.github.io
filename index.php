@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Tengah Senester</title>
+    <title>Project Tengah Semester</title>
 
     <?php
     // Load semua theme dari cookie
